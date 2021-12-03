@@ -28,12 +28,12 @@ class CityListAdapter(private val cityList: List<CityWeather>) :
         fun bind(cityWeather: CityWeather) {
             view.cityName.text = cityWeather.name
             view.weatherDescription.text = cityWeather.description
-            view.min.text = cityWeather.min.toString()
-            view.max.text = cityWeather.max.toString()
+            view.min.text = view.context.getString(R.string.temperature_format, cityWeather.min)
+            view.max.text = view.context.getString(R.string.temperature_format, cityWeather.max)
             view.weatherIcon.text = cityWeather.icon
-            view.temperature.text = cityWeather.temperature.toString()
-            view.feelsTemperature.text = cityWeather.feelsLike.toString()
-            view.humidity.text = cityWeather.humidity.toString()
+            view.temperature.text =view.context.getString(R.string.temperature_format, cityWeather.temperature)
+            view.feelsTemperature.text = view.context.getString(R.string.temperature_format, cityWeather.feelsLike)
+            view.humidity.text = view.context.getString(R.string.humidity_format, cityWeather.humidity)
             view.weather.text = cityWeather.weather
         }
     }

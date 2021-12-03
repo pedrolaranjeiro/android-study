@@ -29,8 +29,12 @@ class CityListViewModel(
             .toList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSuccess { weatherList -> _cityWeatherList.value = weatherList }
-            .subscribe()
+            .subscribe(
+                { weatherList ->
+                    _cityWeatherList.value = weatherList
+                }, {
+                    it.printStackTrace()
+                })
     }
 
 }

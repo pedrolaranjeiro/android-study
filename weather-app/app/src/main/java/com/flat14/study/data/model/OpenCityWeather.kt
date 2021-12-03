@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class OpenCityWeather(
     val name: String,
-    val weather: Weather,
+    val weather: List<Weather>,
     @SerializedName("main")
     val temperature: Temperature
 )

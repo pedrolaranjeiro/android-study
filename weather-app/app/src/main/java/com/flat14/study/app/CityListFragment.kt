@@ -22,6 +22,7 @@ class CityListFragment() : Fragment() {
 
     private val citiesList = mutableListOf<CityWeather>()
     private var _binding: FragmentCityListBinding? = null
+    private val adapter = CityListAdapter(citiesList)
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,6 +34,7 @@ class CityListFragment() : Fragment() {
         model.cityWeatherList.observe(this, Observer {
             citiesList.clear()
             citiesList.addAll(it)
+            adapter.notifyDataSetChanged()
         })
     }
 
@@ -46,7 +48,7 @@ class CityListFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        cityListRecyclerView.adapter = CityListAdapter(citiesList)
+        cityListRecyclerView.adapter = adapter
         cityListRecyclerView.layoutManager = LinearLayoutManager(context)
         cityListRecyclerView.setHasFixedSize(true)
     }
