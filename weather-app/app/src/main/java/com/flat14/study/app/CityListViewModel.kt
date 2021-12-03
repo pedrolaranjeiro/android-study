@@ -24,18 +24,17 @@ class CityListViewModel(
 
     private fun loadCityList() {
         getCitiesUseCase.getListOfCities()
-            .flatMapObservable { cityList ->
-                fromIterable(cityList)
-            }
-            .flatMapSingle { city ->
-                getWeatherUseCase.getCurrentWeather(city)
-            }.toList()
+            .flatMapObservable { cityList -> fromIterable(cityList) }
+            .flatMapSingle { city -> getWeatherUseCase.getCurrentWeather(city) }
+            .toList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSuccess { weatherList ->
-                _cityWeatherList.value = weatherList
-            }
-            .subscribe()
+            .subscribe(
+                { weatherList ->
+                    _cityWeatherList.value = weatherList
+                }, {
+                    it.printStackTrace()
+                })
     }
 
 }
