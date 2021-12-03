@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CityListFragment">
+
+    <fragment
+        android:id="@+id/CityListFragment"
+        android:name="com.flat14.study.app.CityListFragment"
+        android:label="@string/city_list_label"
+        tools:layout="@layout/fragment_city_list">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/CityDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CityDetailsFragment"
+        android:name="com.flat14.study.app.CityDetailsFragment"
+        android:label="@string/city_details_label"
+        tools:layout="@layout/fragment_city_detail">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/CityListFragment" />
+    </fragment>
+</navigation>
