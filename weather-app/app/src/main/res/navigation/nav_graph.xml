@@ -7,22 +7,28 @@
 
     <fragment
         android:id="@+id/CityListFragment"
-        android:name="com.flat14.study.app.CityListFragment"
+        android:name="com.flat14.study.app.city.list.CityListFragment"
         android:label="@string/city_list_label"
         tools:layout="@layout/fragment_city_list">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/CityDetailsFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_FirstFragment_to_SecondFragment"-->
+<!--            app:destination="@id/CityDetailsFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/CityDetailsFragment"
-        android:name="com.flat14.study.app.CityDetailsFragment"
+        android:name="com.flat14.study.app.city.details.CityDetailsFragment"
         android:label="@string/city_details_label"
         tools:layout="@layout/fragment_city_detail">
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/CityListFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
+<!--            app:destination="@id/CityListFragment" />-->
     </fragment>
+
+    <fragment
+        android:id="@+id/CityAddFragment"
+        android:name="com.flat14.study.app.city.add.CityAddFragment"
+        android:label="@string/city_add_label"
+        tools:layout="@layout/fragment_city_add" />
 </navigation>

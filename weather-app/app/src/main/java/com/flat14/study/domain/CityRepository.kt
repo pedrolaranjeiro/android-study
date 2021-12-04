@@ -6,4 +6,6 @@ interface CityRepository {
 
     fun getCityList(): Single<List<String>>
 
+    fun addCity(city: String)
+
 }
