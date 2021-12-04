@@ -1,4 +1,4 @@
-package com.flat14.study.app
+package com.flat14.study.app.city.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.flat14.study.app.R
 import com.flat14.study.app.databinding.FragmentCityListBinding
 import com.flat14.study.domain.model.CityWeather
 import kotlinx.android.synthetic.main.fragment_city_list.*
 import org.koin.androidx.navigation.koinNavGraphViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -50,7 +50,11 @@ class CityListFragment() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         cityListRecyclerView.adapter = adapter
         cityListRecyclerView.layoutManager = LinearLayoutManager(context)
-        cityListRecyclerView.setHasFixedSize(true)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        model.loadCityList()
     }
 
     override fun onDestroyView() {

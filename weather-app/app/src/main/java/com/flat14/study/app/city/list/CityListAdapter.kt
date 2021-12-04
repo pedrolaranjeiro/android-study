@@ -1,9 +1,10 @@
-package com.flat14.study.app
+package com.flat14.study.app.city.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.flat14.study.app.R
 import com.flat14.study.domain.model.CityWeather
 import kotlinx.android.synthetic.main.item_city.view.*
 
