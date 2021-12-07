@@ -11,3 +11,6 @@ data class CityWeather(
     val max: Double,
     val humidity: Double
 )
+
+fun getIconUrl(icon: String) = "https://openweathermap.org/img/wn/$icon@2x.png"
+

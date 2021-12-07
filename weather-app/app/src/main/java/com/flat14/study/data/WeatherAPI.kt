@@ -1,6 +1,7 @@
 package com.flat14.study.data
 
 import com.flat14.study.data.model.OpenCityWeather
+import com.flat14.study.data.model.OpenCityWeatherForecast
 import io.reactivex.rxjava3.core.Single
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -47,5 +48,8 @@ interface WeatherAPI {
 
     @GET("weather?units=metric")
     fun getWeatherForCity(@Query("q") city: String): Single<OpenCityWeather>
+
+    @GET("forecast?units=metric")
+    fun getWeatherForecastForCity(@Query("q") city: String): Single<OpenCityWeatherForecast>
 
 }
