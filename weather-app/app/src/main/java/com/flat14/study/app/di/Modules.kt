@@ -2,6 +2,7 @@ package com.flat14.study.app.di
 
 import com.flat14.study.app.MainViewModel
 import com.flat14.study.app.city.add.CityAddViewModel
+import com.flat14.study.app.city.details.CityDetailsViewModel
 import com.flat14.study.app.city.list.CityListViewModel
 import com.flat14.study.data.OpenWeatherRepository
 import com.flat14.study.data.TemporaryCityListRepository
@@ -30,5 +31,7 @@ val appModule = module {
     viewModel { CityAddViewModel(get()) }
 
     viewModel { MainViewModel() }
+
+    viewModel { CityDetailsViewModel(get()) }
 
 }

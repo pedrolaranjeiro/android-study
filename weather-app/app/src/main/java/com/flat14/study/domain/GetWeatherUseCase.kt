@@ -6,8 +6,7 @@ class GetWeatherUseCase(private val repository: WeatherRepository) {
         repository.getCurrentWeather(city)
 
 
-    fun getWeatherForecast(city: String) {
+    fun getWeatherForecast(city: String) =
         repository.getWeatherForecast(city)
-    }
 
 }

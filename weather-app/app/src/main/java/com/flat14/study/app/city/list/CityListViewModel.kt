@@ -18,6 +18,7 @@ class CityListViewModel(
     private val _cityWeatherList = MutableLiveData<List<CityWeather>>()
     val cityWeatherList: LiveData<List<CityWeather>> = _cityWeatherList
 
+
     init {
         loadCityList()
     }
